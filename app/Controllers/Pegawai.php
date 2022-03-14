@@ -13,13 +13,23 @@ class Pegawai extends BaseController
     }
     public function index()
     {
-        $pegawai = $this->pegawaiModel->findAll();
+        // $pegawai = $this->pegawaiModel->findAll();
+
         $data = [
             'title' => 'Data Pegawai | SIMPEG',
-            'pegawai' => $pegawai
+            'pegawai' => $this->pegawaiModel->getPegawai()
         ];
 
 
         return view('pegawai/index', $data);
+    }
+
+    public function detail($nip)
+    {
+        $data = [
+            'title' => 'Detail Pegawai',
+            'pegawai' => $this->pegawaiModel->getPegawai($nip)
+        ];
+        return view('pegawai/detail', $data);
     }
 }

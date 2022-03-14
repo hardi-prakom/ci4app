@@ -21,7 +21,7 @@
                             <td><?= $p['nip']; ?></td>
                             <td><?= $p['nama']; ?></td>
                             <td>
-                                <a href="" class="btn btn-success">Detail Pegawai</a>
+                                <a href="/pegawai/<?= $p['nip']; ?>" class="btn btn-success">Detail Pegawai</a>
                             </td>
                         </tr>
                     <?php endforeach; ?>
